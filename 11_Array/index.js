@@ -45,3 +45,29 @@ console.log(myNm);
 console.log(myScore);
 
 console.log(Superhero.join(" + ")); //join the + element each and every element.
+
+const Dc_Heros=["SuperMan","BatMan","Flash"];
+const Marver_Heros=["IronMan","Thor","CaptainAmerica"];
+const newHeros= Dc_Heros.concat(Marver_Heros);
+console.log(newHeros); //Concat all two array in a sngle array.
+
+const spreadHeros=[...Dc_Heros, ...Marver_Heros];
+console.log(spreadHeros); //Spread all in a single one.
+
+/* Complex Array */
+const complpexArray=[1,2,3,[4,5,6,[7,8,9,[1,4,7]]]]; //see all the array in simple format
+const structureTheArray=complpexArray.flat(Infinity); //flat
+console.log(structureTheArray);
+
+//Convart in array:
+console.log(Array.isArray("Anupam")); //to ask it is a array or not
+console.log(Array.from('BatMan')); //conver into arrary
+
+
+console.log(Array.from({name:"Anupam"})); // o/p is an empty array
+
+//New Array from set of element
+const num1=100;
+const num2=200;
+const num3=300;
+console.log(Array.of(num1,num2, num3));
