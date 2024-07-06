@@ -43,6 +43,6 @@ const delElement=elementArr.shift();
 console.log(delElement);
 
 
-/* Sort the Number */
+/* 5.Sort the Number */
 const dataSort=[5,2,3,4,1];
 console.log(dataSort.sort());
