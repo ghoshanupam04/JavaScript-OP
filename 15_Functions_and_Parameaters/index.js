@@ -44,3 +44,27 @@ function userName(name ="Knight"){
     return `${name} just in.`;
 }
 console.log(userName()); //if we declare undefined then the bydifault print.
+
+//Using rest Operator(...):
+function addToCart(...items){ //use rest operator
+    return items;
+}
+console.log(addToCart(200,400,340)); //give a array as a output.
+
+//Handel object in Function:
+const User={
+    name:"Anupam Ghosh",
+    id:"21/MSC-04"
+}
+function handelObj(objectany){
+    console.log(`User name is ${objectany.name} and the roll no is ${objectany.id}.`);
+}
+handelObj(User);
+
+//Handle Array in Funcion:
+const userArr=["BatMan","Gotam City"]
+function handelArr(arrelement){
+
+    console.log(`I am ${arrelement[0]},from ${arrelement[1]}.`);
+}
+handelArr(userArr)
