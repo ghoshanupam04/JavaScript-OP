@@ -5,7 +5,7 @@
 //Declare Callstack:
 function one(){
     console.log('One');
-    two();
+    two(); //call two
 }
 function two(){
     console.log("two");
