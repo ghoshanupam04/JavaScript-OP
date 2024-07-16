@@ -23,9 +23,43 @@ for(let i=1; i<=10;i++){
     }
 }
 
-//Print Array element using loops:
-const myArray=["Superman","Flash","Batman","Wondawoman","Aqualaman"];
-for(let i=myArray;i<=myArray.length;i++){
-    const arrel=myArray[i];
-    console.log(arrel);
+//Print Array Element using for loop:
+const myArr=["Batman","Superman","Flash","Wondawoman","Aquaman"];
+console.log(myArr);
+for(let i=0;i<myArr.length;i++){ //Starting loop at 0-th element to array length
+    console.log(myArr[i]); //after that print that
+}
+
+//Revarce Loop:
+console.log("The Revarce Array:");
+for(let i=myArr.length;i>=0;i--){
+    console.log(myArr[i]);
+}
+
+//Continue and brake statement:
+for(i=0;i<=10;i++){
+    if(i==5){
+        console.log("5 Was Detected.");
+        break;
+    }
+    console.log(i);
+}
+
+//Using Array Elements:
+for(let i=0;i<myArr.length;i++){
+    const superhero=i;
+    if(superhero=="Flash"){
+        console.log("Flash Was Detected");
+        break;
+    }
+    console.log(myArr[superhero]);
+}
+
+//continue:
+for(i=0;i<=10;i++){
+    if(i==5){
+        console.log("5 Was Detected.");
+        continue;
+    }
+    console.log(i);
 }
