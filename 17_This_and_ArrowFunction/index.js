@@ -26,7 +26,7 @@ codebase() //return undefined
 //declare Arrow Function
 const database=()=>{
     const dbname="Batman";
-    console.log(this,dbname);
+    console.log(this.dbname);
 }
 database()
 
