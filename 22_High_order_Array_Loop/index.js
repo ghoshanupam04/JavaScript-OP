@@ -36,7 +36,57 @@ const myobj={
     "Country":"India"
 }
 
-//Try it for in loop:
+//Declare Forin loop:
+// Use forin loop using object
 for(let key in myobj){
-    console.log(myobj);
+    console.log(key); //print only the keys
+    console.log(myobj[key]); //print the objects
 }
+
+//Use array in for in loop:
+const myArray=["Superman","WondaWoman","Batman","Flash","Aquaman",];
+for(let element in myArray){
+    console.log(`The Super Hero Is: ${myArray[element]}`);
+}
+
+//We declare forin loop in map function:
+const nMap= new Map();
+map.set("Indai","Kolkata");
+map.set("USA","London");
+map.set("Asia","Japan");
+
+for (const key in nMap) {
+    console.log(key); // No print because Map are not itrable.
+}
+
+//ForEach loop:
+const coding=["JS","Python","Java","Cpp","Ruby"];
+coding.forEach(element => {
+    console.log(`The Programming languae is: ${element}`);
+});
+
+//Another way to use Array using foreach loop:
+function accessArr(item){
+    console.log(item);
+}
+coding.forEach(accessArr); //Print the Coding Array
+
+//Declare Object into the Array:
+const MyCoding=[
+    {
+        "Language":"JavaScript",
+        "Months":"June-July",
+    },
+    {
+        "Language":"JAVA",
+        "Months":"Aug-Sep",
+    },
+    {
+        "Language":"Parl",
+        "Months":"Oct-Nov"
+    }
+]
+MyCoding.forEach(element => {
+    console.log(`I learn Progamming languages are ${element.Language} ,
+        and myMonths duration are ${element.Months}`);
+});
