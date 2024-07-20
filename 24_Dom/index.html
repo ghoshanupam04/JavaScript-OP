@@ -13,19 +13,27 @@
 </style>
 <body class="bg-black">
     <div>
-        <b><h3 id="title" 
-            class="heading">Code with Knight</h3></b>
+        <b><h2 id="title" 
+            class="heading">Code with Knight</h2></b>
+            <h3>Chai or Code reference</h3>
+            <h3>Hey There, The code base is ready for activate.</h3>
         <p>Hello coders welcome To learn Dom in JavaScript .</p>
+        <ul>
+            <li class="class-List">one</li>
+            <li class="class-List">two</li>
+            <li class="class-List">three</li>
+            <li class="class-List">fore</li>
+        </ul>
     </div>
 </body>
 <script>
     
     //Select the document and id in the JS:
-    //document.getElementById("title") //using this we can select the id.
-    //document.getElementsByName('heading') //handle the class.
+    document.getElementById("title") //using this we can select the id.
+    document.getElementsByName('heading') //handle the class.
 
-    //document.getElementById('title').getAttribute('class') //get the classname
-    //document.getElementsByClassName('heading').getAttribute('id') //get the id name
+    document.getElementById('title').getAttribute('class') //get the classname
+    document.getElementsByClassName('heading').getAttribute('id') //get the id name
 
     /*Set Attribute:
     When we set another call or id in the div then the past id or class was overwrite*/
@@ -35,8 +43,31 @@
     //here the past id(title) was deleted and the new id(heading) was activated
 
     //Add Styling using the Dom:
-    //const title=document.getElementsById('heading').getAttribute('id')
-    //title.style="color:yellow"
+    const title=document.getElementsById('heading').getAttribute('id')
+    title.style="color:yellow"
+
+    /*Quarry Selector*/
+    /*When we use querryselector the only the first element was selected.
+    ex:
+    document.querySelector('h2') // only the first h2 was selected*/
+
+    //Select the class using querryselector:
+    document.querySelector('.heading')
+
+    //Select the id
+    ocument.querySelector('.title')
+
+    //Querryselectorall:
+    /*QuerryselectroAll can select all the elements
+    ex:
+    document.querySelectorAll('li')*/
+
+    //use the QuerrySelectroAll
+    const AllLiList=document.querySelectorAll('li');
+    AllLiList[0].style="color:red"
+    AllLiList[2].style="color:yellow"
     
+    //GetElementbyClassName():
+    document.getElementsByClassName('class-List') 
 </script>
 </html>
