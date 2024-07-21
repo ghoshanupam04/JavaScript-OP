@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model Part-2 & Parent Child Relationship</title>
+</head>
+<style>
+    .bg-black{
+        background-color: black;
+        color: white;
+    }
+</style>
+<body class="bg-black">
+    <div class="parent">
+        <div class="days">ThursDay</div>
+        <div class="days">FriDay</div>
+        <div class="days">SaturDay</div>
+        <div class="days">SunDay</div>
+    </div>
+
+    <script>
+        const checkClass=document.querySelector('.parent')
+        console.log(checkClass);
+        console.log(checkClass.children); //To see the children Element
+        console.log(checkClass.children[3].innerHTML="Monday"); //Access the last children Element
+
+        //Using For Loop to See all the values order wise
+        for(let i=0;i<checkClass.children.length;i++){
+            console.log(checkClass.children[i].innerHTML);
+        }
+
+        //Access each child element.
+        checkClass.children[0].style.color="yellow";
+
+        //To Access the FirstElementchild in the class:
+        console.log(`The First ElementChild is: ${checkClass.firstElementChild.innerHTML}`)
+        //Access the LastElementChild in the class:
+        console.log(`The Last ElementChild is: ${checkClass.lastElementChild.innerHTML}`)
+
+        //Move the Child to Parent Access:
+        const parentClass= document.querySelector('.days')
+        console.log(parentClass.parentElement);
+        console.log(parentClass.nextElementSibling);
+
+        //To see the childNodes:
+        const nodes=checkClass.childNodes
+        console.log(nodes);
+    </script>
+</body>
+</html>

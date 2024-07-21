@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model Part-3 & Create Element Using </title>
+</head>
+<body style="background-color: black; color:White" >
+    
+</body>
+
+<script>
+    //Create a New Element:
+    const div=document.createElement("div") //Create  a Div element
+    console.log(div);
+    
+    //Insert properties into the Element:
+    div.className="header"; // Add class Name
+    div.id=Math.round(Math.random()*10+1); //Add Id and make funn
+    div.setAttribute('title','Generate a title') // Here we set an Attribute
+    div.style.backgroundColor="red" //Set backgrund Color
+    //div.innerText="Hello Coders"
+    const addText=document.createTextNode("Hello Coders") //create text node
+    div.appendChild(addText) // Add in div
+    document.body.appendChild(div) //Show in the body
+
+</script>
+</html>
