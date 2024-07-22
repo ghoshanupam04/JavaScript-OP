@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Obect Model Part-4 & Edit and Remove Dom Element  </title>
+</head>
+<body style="background-color: black;color:white">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    //Create a new Child element in the parent Class. (Normal Approach)
+    function addlang(language){
+        const li=document.createElement('li');
+        li.innerHTML=`${language}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlang('JAVA');
+    addlang('Python')
+
+    //Creeate the previous one with Optimise Approach:
+    function AddLang(language){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(language));
+        document.querySelector('.language').appendChild(li)
+    }
+    AddLang('golang')
+
+    //Edit the values:
+    const posssiblechage=document.querySelector("li:nth-child(2)")
+    //posssiblechage.innerHTML="c--" //1st approach
+    const newlang=document.querySelector('li');
+    newlang.textContent="swift"
+    posssiblechage.replaceWith(newlang)
+
+    //Edit value Secondery Approach;
+    const editval=document.querySelector('li:first-child(1)')
+    editval.outerHTML="<li>Language mat Sikho </li>"
+
+    //delete or remove element:
+    const lastlang=document.querySelector("li:nth-child(1)")
+    lastlang.remove()
+</script>
+</html>
