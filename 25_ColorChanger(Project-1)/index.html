@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Chnaeger Project</title>
+</head>
+<style>
+    button{
+        height: 35px;
+        width: 50px;
+        border-radius: 20%;
+        justify-content: center;
+    }
+    #gray{
+        background-color: gray;
+    }
+    #white{
+        background-color: white;
+    }
+    #yellow{
+        background-color: yellow;
+    }
+    #blue{
+        background-color: blue;
+    }
+    
+</style>
+<body>
+    <h2>Choose the colour</h2>
+    <div>
+        <button class="button" id="gray">Gray</button>
+        <button class="button" id="white">White</button>
+        <button class="button" id="yellow">Yellow</button>
+        <button class="button" id="blue">Blue</button>
+    </div>
+    <p>This is the Colour Changer Website <br> Here the user
+    click the buttons and autometically change the colours.</p>
+    Thank You.
+</body>
+<script>
+    const buttons=document.querySelectorAll('.button');
+    const body=document.querySelector('body');
+    buttons.forEach(function(bt){
+        bt.addEventListener("click",function(event){
+            switch (event.target.id) {
+                case "gray":
+                    body.style.backgroundColor=event.target.id
+                    break;
+                case "white":
+                    body.style.backgroundColor=event.target.id
+                    break;
+                case "yellow":
+                    body.style.backgroundColor=event.target.id
+                    break;
+                case "blue":
+                    body.style.backgroundColor=event.target.id
+                    break;
+                    case "purple":
+                    body.style.backgroundColor=event.target.id
+                    break;
+                default:
+                    break;
+            }
+        })
+    })
+</script>
+</html>
