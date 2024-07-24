@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body style="background-color: black; color:white;">
+    <form action="#">
+        <center>
+            <h2><u>BMI Checker</u></h2>
+            <div>
+            <p>
+                <label for="#">Enter Height in CM 
+                    <input type="text" name="height" id="height" placeholder="Enter CM Value">
+                </label>
+            </p>
+            <p>
+                <label for="#">Enter Weight in KG
+                    <input type="text" name="weight" id="weight" placeholder="Enter KG Value">
+                </label>
+            </p>
+            <button>Calculate</button>
+            <br>
+            <div id="results"></div>
+            <div id="output"></div>
+            <br>
+            <div>
+                <h3><u>BMI Weight Guide</u></h3>
+                <p>Under Weight = Less than 18.6</p>
+                <p>Normal Range = 18.6 and 24.9</p>
+                <p>Overweight = Greater than 24.9</p>
+            </div>
+        </center>
+    </form>
+</body>
+
+<script>
+    const form=document.querySelector('form');
+    form.addEventListener("submit",function(eve){
+        eve.preventDefault();
+
+        const height=parseInt(document.querySelector("#height").value);
+        const weight=parseInt(document.querySelector("#weight").value);
+        const results=document.querySelector("#results");
+
+        //Condition
+        if(height=="" ||height<0 || isNaN(height)){
+            results.innerHTML="Please Enter The Proper Value."
+        }
+        else if(weight=="" ||weight<0 || isNaN(weight)){
+            results.innerHTML="Please Enter The Proper Value."
+        }
+        else{
+            const BMI=(weight/((height*height)/10000)).toFixed(2)
+            results.innerHTML=`<span><b>Your BMI Result: ${BMI}</b></span>`
+            results.style.color="red"
+            const outputVal=document.querySelector("#output");
+
+            //Condition
+            if(BMI<=18.6){
+                outputVal.innerHTML="You are UnderWeight"
+            }
+            else if(BMI>18.6 && BMI<25){
+                outputVal.innerHTML="You are Normal"
+            }
+            else{
+                outputVal.innerHTML="You are OverWeight"
+            }
+        }
+    })
+    
+</script>
+</html>
