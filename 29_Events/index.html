@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events On HTML </title>
+</head>
+
+<body style="background-color: black;">
+    <h2>Images</h2>
+    <div>
+        <ul class="images">
+            <li><img src="https://images.pexels.com/photos/7298246/pexels-photo-7298246.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    style="width: 200px;" alt="camera" id="camera" srcset=""></li>
+            <li> <img
+                    src="https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    style="width: 200px;" alt="books" id="books" srcset=""></li>
+            <li> <img
+                    src="https://images.pexels.com/photos/52062/pexels-photo-52062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    style="width: 200px;" alt="hall" id="hall" srcset=""></li>
+            <li> <img
+                    src="https://images.pexels.com/photos/90414/pexels-photo-90414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    style="width: 200px;" alt="church" id="church"></li>
+            <li><img src="https://images.pexels.com/photos/34704/martin-luther-church-pray-church-of-our-lady.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    style="width: 200px;" alt="man" id="man"></li>
+            <li><a href="https://www.google.com/" style="color:white;"">Google</a></li>    
+        </ul>
+    </div>
+</body>
+<script>
+    //Creaate a Click Event:
+    const church=document.querySelector("#church");
+    church.addEventListener("click",function(eve){
+        alert("This is a Church");
+        const newElement=document.createElement("p");
+        newElement.appendChild(document.createTextNode(eve.timeStamp));
+        document.querySelector('.images').appendChild(newElement).style.color="white"
+    },false)
+</script>
+</html>
