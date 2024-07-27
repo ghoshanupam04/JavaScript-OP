@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JavaScript ||setTimeout and clearTimeout</title>
+</head>
+<body>
+    <h2>Hello Coders</h2>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    
+    /*setTimeout Function:
+    => we use setTimeout function to execute our code at the particular given time.*/
+
+    //Describe SetTimeout function:
+    setTimeout(function(){
+        console.log("Hello Coders"); //After run the arrowfunction code then run this code.
+    },2000)
+
+    //Describe SetTimeot function wsing ArrowFunction:
+    setTimeout(()=>{
+        console.log("Welcome to my GitHub Repo."); //This code run first
+    },1000)
+    
+
+   //Make a code  after 2second the h2 line was change:
+   const changetext=function(){
+    document.querySelector("h2").innerHTML="Hello Anupam";
+   }
+   const declare=setTimeout(changetext,2000);
+
+   /*clearTimeout Function:
+   =>stopTimeout function use to stop the setTimeout function and stop the task.*/changetext
+   
+   document.querySelector("#stop").addEventListener("click",function(eve){
+    clearTimeout(declare);
+    console.log("Task was Stopped");
+   })
+
+
+   
+</script>
+</html>

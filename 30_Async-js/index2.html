@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JavaScript ||setInterval</title>
+</head>
+<body>
+    <h2>Hello Coders</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    /*setInterval =>setInterval program continue run */
+    
+    //Declare setInterval Function:
+     const startTime=setInterval(() => {
+         console.log(Date.now());
+     }, 1000);
+
+    /*Declare clearInterval: Stop the task.*/
+     clearInterval(startTime)
+    
+    /*Q: Create a program when we click the start button the time was
+     start and when we click on stop button then the task was stoped*/
+
+     const ClickButton=document.querySelector("#start").addEventListener("click",function(eve){
+        const start=setInterval(()=>{
+            console.log(Date.now());
+        },1000)
+
+        document.querySelector("#stop").addEventListener("click",function(eve){
+            clearInterval(start)
+            console.log("stop");
+        })
+     })
+
+    
+    
+
+</script>
+</html>
