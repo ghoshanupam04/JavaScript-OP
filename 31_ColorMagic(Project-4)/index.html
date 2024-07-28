@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Magic</title>
+</head>
+
+<body style=" background-color: black; color: white;">
+
+    <h2><u>Colour Changer</u></h2>
+    <h3>
+        Press Start button then the colour of the webpage are changed,
+        <br>and when press Stop button then it is stopped.
+    </h3>
+    <button id="start" style="height: 40px; width: 60px; border-radius: 8px;">Start</button>
+    <button id="stop" style="height: 40px; width: 60px; border-radius: 8px;">Stop</button>
+
+</body>
+
+<script>
+
+    const randomColor = function () {
+        const hex = "123456ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color;
+    }
+    let interval
+    const ClickStart = function () {
+        if(!interval){
+            interval = setInterval(startchanging, 1000);
+            console.log("Color Changing was start");
+        }
+        function startchanging() {
+            document.body.style.backgroundColor = randomColor();
+        }
+    }
+    const ClickStop = function () {
+        clearInterval(interval);
+        console.log("Stop Changing");
+        interval=null;
+    }
+    document.querySelector("#start").addEventListener("click", ClickStart);
+    document.querySelector("#stop").addEventListener("click", ClickStop);
+
+</script>
+
+</html>
