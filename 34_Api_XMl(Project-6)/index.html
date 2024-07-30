@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuss abour APIs and the work culture</title>
+</head>
+<style>
+    .container {
+        height: 200px;
+        width: 230px;
+        border: 2px solid rgb(71, 176, 205);
+        /* display: flex;
+        justify-content: center; */
+    }
+
+    .picture {
+        height: 100px;
+        width: 180px;
+        border: 2px solid #82ea32;
+        margin-top: 5px;
+    }
+</style>
+
+<body style="background-color: black; color: rgb(194, 209, 30);">
+    <h3>Discuss about APIs and XMLhttprequest feature</h3>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" style="color: red;">
+        XMLhttprequest Doc</a><br><br>
+    <button>Get</button>
+
+    <div class="container">
+        <center>
+            <div class="picture"></div>
+            <div class="context" style="color: white;"></div>
+        </center>
+    </div>
+</body>
+<script>
+    const Apiurl = "https://api.github.com/users/ghoshanupam04";
+    const xhr = new XMLHttpRequest();
+    xhr.open("get", Apiurl);
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState == 3) {
+            const data = JSON.parse(this.responseText);
+
+            //1st task
+            /* const name=document.querySelector(".info");
+             name.innerHTML=`Your bio is ${data.bio}`*/
+
+            //2nd Task
+            /*document.querySelector("button").addEventListener("click",function(eve){
+                const represent=document.querySelector(".info");
+                represent.innerHTML=`My Name is: ${data.login}`
+            })*/
+
+            //3rd task:
+            document.querySelector("button").addEventListener("click", function (eve) {
+                const picture = document.querySelector(".picture");
+                const bio = document.querySelector(".context")
+                picture.innerHTML = `<img src="https://avatars.githubusercontent.com/u/65004586?v=4" 
+                style="height:100px; width:180px"></img>`
+                bio.innerHTML = `${data.bio}`
+            })
+        }
+    }
+    xhr.send()
+</script>
+
+</html>
