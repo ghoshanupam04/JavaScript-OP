@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <center>
+        <h2><u>Weather Application</u></h2>
+        <label> Enter Your Location : </label>
+        <input type="text" name="location" id="location" placeholder="Enter City Name">
+        <button id="search">Search</button>
+        <div id="container"></div>
+    </center>
+</body>
+<script>
+    //Get id:
+    const place = document.querySelector("#location");
+    const button = document.querySelector("#search");
+    const body = document.querySelector("#container");
+
+    //Add event listener to button
+    button.addEventListener("click", (eve) => {
+        const inputValue = place.value;
+        console.log(inputValue);
+        fetch(`http://api.weatherapi.com/v1/current.json?key=6445e34efa8146acbae151354240308&q=${inputValue}&aqi=yes`)
+            .then(Response => Response.json())
+            .then((data) => {
+                body.innerHTML = `<h4><u>Weather Details of ${inputValue}</u></h4>
+                                <br>
+                                City: ${data.location.name}
+                                <br>
+                                Region: ${data.location.region}
+                                <br>
+                                TimeZone: ${data.location.tz_id}
+                                <br>
+                                Localtime: ${data.location.localtime}
+                                <br>
+                                Tempareture Celsius: ${data.current.temp_c}
+                                <br>
+                                Tempareture Fahrenheit: ${data.current.temp_f}
+                                <br>
+                                Condition: ${data.current.condition.text}`
+
+            })
+            .catch((err) => {
+                console.log(err);
+
+            })
+
+    })
+
+</script>
+
+</html>
