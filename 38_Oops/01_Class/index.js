@@ -8,7 +8,7 @@ const menu={
     "department":"Developement",
     "greed":function(){
         console.log("Hello Coders");
-        console.log(`firstname is :${this.firstname}`); //usin this keyword 
+        console.log(`firstname is :${this.firstname}`); //using this keyword 
         console.log(this); //return current context     
         
     }
