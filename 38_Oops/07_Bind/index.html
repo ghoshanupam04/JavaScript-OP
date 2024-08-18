@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discuss Bind </title>
+</head>
+<body>
+    <button> Click </button>
+</body>
+<script>
+    class User{
+        constructor(){
+            this.library="React";
+            this.server="http//localhost:4000";
+
+            //Requirement:
+            document
+            .querySelector("button")
+            .addEventListener("click",this.clickButton.bind(this))
+            //To attach the object we use bind keyword
+        }
+        
+        //Declare Method:
+        clickButton(){
+            console.log("Button was clicked");  
+            console.log(this);     
+        }
+    }
+
+    const app=new User();
+    console.log(app);
+    
+</script>
+</html>
