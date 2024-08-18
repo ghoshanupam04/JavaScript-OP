@@ -25,7 +25,7 @@ class CreateAnewUser{
     }
 }
 
-class teacher extends CreateAnewUser{ //enxtend keyword inherite properties from the other define class
+class teacher extends CreateAnewUser{ //enxtend keyword inherite properties from the other class
     constructor(userName,email,pass){
         super(userName) //super refer the object where we define that /CreateAnewUser
         this.email=email;
