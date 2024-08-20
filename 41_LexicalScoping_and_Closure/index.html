@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doiscuss about Lexical Scope and Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+    <script>
+
+        //Normal approach to change backgroun colour to click the button
+        /*document.querySelector("#orange").onclick=function(){
+            document.body.style.backgroundColor="orange";
+        }
+        document.querySelector("#green").onclick=function(){
+            document.body.style.backgroundColor="green";
+        }*/
+
+        //Closure approach:
+        function handleClick(color){
+           return  function (){
+            document.body.style.backgroundColor=`${color}`
+            }
+        }
+        document.querySelector("#orange").onclick=handleClick("orange");
+        document.querySelector("#green").onclick=handleClick("green");
+    </script>
+</html>
