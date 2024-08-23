@@ -1,0 +1,23 @@
+.container{
+    height: 360px;
+    width: 340px;
+    background-color: rgb(255, 164, 54);
+    border: 2px solid white;
+    border-radius: 9px;
+}
+.heading{
+    padding-right: 230px;
+    color: black;
+    margin-top: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#to-do{
+    height: 40px;
+    width: 65%;
+    border-radius: 6px;
+}
+#add-items{
+    height: 46px;
+    width: 50px;
+    border-radius: 6px;
+}
